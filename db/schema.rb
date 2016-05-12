@@ -11,35 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512230515) do
+ActiveRecord::Schema.define(version: 20160512231821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "leagues", force: :cascade do |t|
-    t.string   "name",                   default: "",    null: false
+    t.string   "name",                                           default: "",    null: false
     t.string   "season"
     t.integer  "year"
     t.string   "final_name"
     t.string   "league_type_dropdown"
     t.integer  "league_type"
     t.text     "description"
-    t.integer  "limit",                                  null: false
-    t.decimal  "price"
-    t.date     "start_players_birthday",                 null: false
-    t.date     "last_players_birthday",                  null: false
-    t.date     "show_on_main_page",                      null: false
-    t.date     "open_registration",                      null: false
-    t.date     "close_registration",                     null: false
-    t.date     "hide_on_main_page",                      null: false
-    t.boolean  "receive_emails",         default: false
-    t.string   "email",                  default: "",    null: false
-    t.boolean  "competitive",            default: false
-    t.boolean  "disabled",               default: false
+    t.integer  "limit",                                                          null: false
+    t.date     "start_players_birthday",                                         null: false
+    t.date     "last_players_birthday",                                          null: false
+    t.date     "show_on_main_page",                                              null: false
+    t.date     "open_registration",                                              null: false
+    t.date     "close_registration",                                             null: false
+    t.date     "hide_on_main_page",                                              null: false
+    t.boolean  "receive_emails",                                 default: false
+    t.string   "email",                                          default: "",    null: false
+    t.boolean  "competitive",                                    default: false
+    t.boolean  "disabled",                                       default: false
     t.string   "slug"
     t.text     "notes"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+    t.decimal  "price",                  precision: 8, scale: 2
   end
 
   add_index "leagues", ["slug"], name: "index_leagues_on_slug", unique: true, using: :btree
