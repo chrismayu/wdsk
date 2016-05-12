@@ -1,38 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Leagues</h1>
-
-<table>
+<%- model_class = League -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Season</th>
-      <th>Year</th>
-      <th>Final name</th>
-      <th>League type dropdown</th>
-      <th>League type</th>
-      <th>Description</th>
-      <th>Limit</th>
-      <th>Price</th>
-      <th>Start players birthday</th>
-      <th>Last players birthday</th>
-      <th>Show on main page</th>
-      <th>Open registration</th>
-      <th>Close registration</th>
-      <th>Hide on main page</th>
-      <th>Receive emails</th>
-      <th>Email</th>
-      <th>Competitive</th>
-      <th>Disabled</th>
-      <th>Slug</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:season) %></th>
+      <th><%= model_class.human_attribute_name(:year) %></th>
+      <th><%= model_class.human_attribute_name(:final_name) %></th>
+      <th><%= model_class.human_attribute_name(:league_type_dropdown) %></th>
+      <th><%= model_class.human_attribute_name(:league_type) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:limit) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:start_players_birthday) %></th>
+      <th><%= model_class.human_attribute_name(:last_players_birthday) %></th>
+      <th><%= model_class.human_attribute_name(:show_on_main_page) %></th>
+      <th><%= model_class.human_attribute_name(:open_registration) %></th>
+      <th><%= model_class.human_attribute_name(:close_registration) %></th>
+      <th><%= model_class.human_attribute_name(:hide_on_main_page) %></th>
+      <th><%= model_class.human_attribute_name(:receive_emails) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:competitive) %></th>
+      <th><%= model_class.human_attribute_name(:disabled) %></th>
+      <th><%= model_class.human_attribute_name(:slug) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @leagues.each do |league| %>
       <tr>
+        <td><%= link_to league.id, league_path(league) %></td>
         <td><%= league.name %></td>
         <td><%= league.season %></td>
         <td><%= league.year %></td>
@@ -54,14 +56,21 @@
         <td><%= league.disabled %></td>
         <td><%= league.slug %></td>
         <td><%= league.notes %></td>
-        <td><%= link_to 'Show', league %></td>
-        <td><%= link_to 'Edit', edit_league_path(league) %></td>
-        <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l league.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_league_path(league), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      league_path(league),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New League', new_league_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_league_path,
+            :class => 'btn btn-primary' %>

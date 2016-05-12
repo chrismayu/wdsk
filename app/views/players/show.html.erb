@@ -1,114 +1,59 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Player -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @player.last_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @player.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @player.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:middle_initial) %>:</strong></dt>
+  <dd><%= @player.middle_initial %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @player.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @player.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
+  <dd><%= @player.postal_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+  <dd><%= @player.phone_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email_address) %>:</strong></dt>
+  <dd><%= @player.email_address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_of_birth) %>:</strong></dt>
+  <dd><%= @player.date_of_birth %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:years_played) %>:</strong></dt>
+  <dd><%= @player.years_played %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:played_competitively) %>:</strong></dt>
+  <dd><%= @player.played_competitively %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
+  <dd><%= @player.gender %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name_of_parent_guardian) %>:</strong></dt>
+  <dd><%= @player.name_of_parent_guardian %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:willing_to_coach) %>:</strong></dt>
+  <dd><%= @player.willing_to_coach %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:willing_to_assist_coach) %>:</strong></dt>
+  <dd><%= @player.willing_to_assist_coach %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:child_like_to_play_goalie) %>:</strong></dt>
+  <dd><%= @player.child_like_to_play_goalie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:child_has_a_medical_condition) %>:</strong></dt>
+  <dd><%= @player.child_has_a_medical_condition %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:medical_condition) %>:</strong></dt>
+  <dd><%= @player.medical_condition %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:appectance_of_terms) %>:</strong></dt>
+  <dd><%= @player.appectance_of_terms %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:league_id) %>:</strong></dt>
+  <dd><%= @player.league_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:transaction_id) %>:</strong></dt>
+  <dd><%= @player.transaction_id %></dd>
+</dl>
 
-<p>
-  <strong>First name:</strong>
-  <%= @player.first_name %>
-</p>
-
-<p>
-  <strong>Middle initial:</strong>
-  <%= @player.middle_initial %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @player.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @player.city %>
-</p>
-
-<p>
-  <strong>Postal code:</strong>
-  <%= @player.postal_code %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @player.phone_number %>
-</p>
-
-<p>
-  <strong>Email address:</strong>
-  <%= @player.email_address %>
-</p>
-
-<p>
-  <strong>Date of birth:</strong>
-  <%= @player.date_of_birth %>
-</p>
-
-<p>
-  <strong>Years played:</strong>
-  <%= @player.years_played %>
-</p>
-
-<p>
-  <strong>Played competitively:</strong>
-  <%= @player.played_competitively %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @player.gender %>
-</p>
-
-<p>
-  <strong>Name of parent guardian:</strong>
-  <%= @player.name_of_parent_guardian %>
-</p>
-
-<p>
-  <strong>Willing to coach:</strong>
-  <%= @player.willing_to_coach %>
-</p>
-
-<p>
-  <strong>Willing to assist coach:</strong>
-  <%= @player.willing_to_assist_coach %>
-</p>
-
-<p>
-  <strong>Child like to play goalie:</strong>
-  <%= @player.child_like_to_play_goalie %>
-</p>
-
-<p>
-  <strong>Child has a medical condition:</strong>
-  <%= @player.child_has_a_medical_condition %>
-</p>
-
-<p>
-  <strong>Medical condition:</strong>
-  <%= @player.medical_condition %>
-</p>
-
-<p>
-  <strong>Appectance of terms:</strong>
-  <%= @player.appectance_of_terms %>
-</p>
-
-<p>
-  <strong>League:</strong>
-  <%= @player.league_id %>
-</p>
-
-<p>
-  <strong>Email address:</strong>
-  <%= @player.email_address %>
-</p>
-
-<p>
-  <strong>Transaction:</strong>
-  <%= @player.transaction_id %>
-</p>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              players_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_player_path(@player), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              player_path(@player),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

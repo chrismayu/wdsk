@@ -1,109 +1,59 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = League -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @league.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @league.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:season) %>:</strong></dt>
+  <dd><%= @league.season %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:year) %>:</strong></dt>
+  <dd><%= @league.year %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:final_name) %>:</strong></dt>
+  <dd><%= @league.final_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:league_type_dropdown) %>:</strong></dt>
+  <dd><%= @league.league_type_dropdown %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:league_type) %>:</strong></dt>
+  <dd><%= @league.league_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @league.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:limit) %>:</strong></dt>
+  <dd><%= @league.limit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @league.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_players_birthday) %>:</strong></dt>
+  <dd><%= @league.start_players_birthday %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_players_birthday) %>:</strong></dt>
+  <dd><%= @league.last_players_birthday %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:show_on_main_page) %>:</strong></dt>
+  <dd><%= @league.show_on_main_page %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:open_registration) %>:</strong></dt>
+  <dd><%= @league.open_registration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:close_registration) %>:</strong></dt>
+  <dd><%= @league.close_registration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hide_on_main_page) %>:</strong></dt>
+  <dd><%= @league.hide_on_main_page %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:receive_emails) %>:</strong></dt>
+  <dd><%= @league.receive_emails %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @league.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:competitive) %>:</strong></dt>
+  <dd><%= @league.competitive %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:disabled) %>:</strong></dt>
+  <dd><%= @league.disabled %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:slug) %>:</strong></dt>
+  <dd><%= @league.slug %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
+  <dd><%= @league.notes %></dd>
+</dl>
 
-<p>
-  <strong>Season:</strong>
-  <%= @league.season %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @league.year %>
-</p>
-
-<p>
-  <strong>Final name:</strong>
-  <%= @league.final_name %>
-</p>
-
-<p>
-  <strong>League type dropdown:</strong>
-  <%= @league.league_type_dropdown %>
-</p>
-
-<p>
-  <strong>League type:</strong>
-  <%= @league.league_type %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @league.description %>
-</p>
-
-<p>
-  <strong>Limit:</strong>
-  <%= @league.limit %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @league.price %>
-</p>
-
-<p>
-  <strong>Start players birthday:</strong>
-  <%= @league.start_players_birthday %>
-</p>
-
-<p>
-  <strong>Last players birthday:</strong>
-  <%= @league.last_players_birthday %>
-</p>
-
-<p>
-  <strong>Show on main page:</strong>
-  <%= @league.show_on_main_page %>
-</p>
-
-<p>
-  <strong>Open registration:</strong>
-  <%= @league.open_registration %>
-</p>
-
-<p>
-  <strong>Close registration:</strong>
-  <%= @league.close_registration %>
-</p>
-
-<p>
-  <strong>Hide on main page:</strong>
-  <%= @league.hide_on_main_page %>
-</p>
-
-<p>
-  <strong>Receive emails:</strong>
-  <%= @league.receive_emails %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @league.email %>
-</p>
-
-<p>
-  <strong>Competitive:</strong>
-  <%= @league.competitive %>
-</p>
-
-<p>
-  <strong>Disabled:</strong>
-  <%= @league.disabled %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @league.slug %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @league.notes %>
-</p>
-
-<%= link_to 'Edit', edit_league_path(@league) %> |
-<%= link_to 'Back', leagues_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              leagues_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_league_path(@league), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              league_path(@league),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

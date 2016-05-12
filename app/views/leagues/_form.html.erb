@@ -1,31 +1,48 @@
-<%= simple_form_for(@league) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @league, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@league[:name]) %>
+  <%= f.input :season %>
+  <%= error_span(@league[:season]) %>
+  <%= f.input :year %>
+  <%= error_span(@league[:year]) %>
+  <%= f.input :final_name %>
+  <%= error_span(@league[:final_name]) %>
+  <%= f.input :league_type_dropdown %>
+  <%= error_span(@league[:league_type_dropdown]) %>
+  <%= f.input :league_type %>
+  <%= error_span(@league[:league_type]) %>
+  <%= f.input :description %>
+  <%= error_span(@league[:description]) %>
+  <%= f.input :limit %>
+  <%= error_span(@league[:limit]) %>
+  <%= f.input :price %>
+  <%= error_span(@league[:price]) %>
+  <%= f.input :start_players_birthday %>
+  <%= error_span(@league[:start_players_birthday]) %>
+  <%= f.input :last_players_birthday %>
+  <%= error_span(@league[:last_players_birthday]) %>
+  <%= f.input :show_on_main_page %>
+  <%= error_span(@league[:show_on_main_page]) %>
+  <%= f.input :open_registration %>
+  <%= error_span(@league[:open_registration]) %>
+  <%= f.input :close_registration %>
+  <%= error_span(@league[:close_registration]) %>
+  <%= f.input :hide_on_main_page %>
+  <%= error_span(@league[:hide_on_main_page]) %>
+  <%= f.input :receive_emails %>
+  <%= error_span(@league[:receive_emails]) %>
+  <%= f.input :email %>
+  <%= error_span(@league[:email]) %>
+  <%= f.input :competitive %>
+  <%= error_span(@league[:competitive]) %>
+  <%= f.input :disabled %>
+  <%= error_span(@league[:disabled]) %>
+  <%= f.input :slug %>
+  <%= error_span(@league[:slug]) %>
+  <%= f.input :notes %>
+  <%= error_span(@league[:notes]) %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :season %>
-    <%= f.input :year %>
-    <%= f.input :final_name %>
-    <%= f.input :league_type_dropdown %>
-    <%= f.input :league_type %>
-    <%= f.input :description %>
-    <%= f.input :limit %>
-    <%= f.input :price %>
-    <%= f.input :start_players_birthday %>
-    <%= f.input :last_players_birthday %>
-    <%= f.input :show_on_main_page %>
-    <%= f.input :open_registration %>
-    <%= f.input :close_registration %>
-    <%= f.input :hide_on_main_page %>
-    <%= f.input :receive_emails %>
-    <%= f.input :email %>
-    <%= f.input :competitive %>
-    <%= f.input :disabled %>
-    <%= f.input :slug %>
-    <%= f.input :notes %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                leagues_path, :class => 'btn btn-default' %>
 <% end %>

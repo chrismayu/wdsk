@@ -15,13 +15,31 @@ group :development do
 end
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'figaro'
 gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'pundit'
 gem 'sendgrid'
 gem 'simple_form'
+gem 'friendly_id'
+gem 'browsernizer'
+gem 'heroku'
+gem 'twitter-bootstrap-rails', ' 3.2.0'
+gem 'bootstrap-datepicker-rails'
+gem 'rollbar'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular'
+  gem 'rails-assets-leaflet'
+  gem 'rails-assets-bootstrap-sweetalert'
+  gem 'rails-assets-font-awsome'
+end
+ 
+
 group :development do
+  gem "letter_opener"
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'

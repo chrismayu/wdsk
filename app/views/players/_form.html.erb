@@ -1,32 +1,48 @@
-<%= simple_form_for(@player) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @player, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :last_name %>
+  <%= error_span(@player[:last_name]) %>
+  <%= f.input :first_name %>
+  <%= error_span(@player[:first_name]) %>
+  <%= f.input :middle_initial %>
+  <%= error_span(@player[:middle_initial]) %>
+  <%= f.input :address %>
+  <%= error_span(@player[:address]) %>
+  <%= f.input :city %>
+  <%= error_span(@player[:city]) %>
+  <%= f.input :postal_code %>
+  <%= error_span(@player[:postal_code]) %>
+  <%= f.input :phone_number %>
+  <%= error_span(@player[:phone_number]) %>
+  <%= f.input :email_address %>
+  <%= error_span(@player[:email_address]) %>
+  <%= f.input :date_of_birth %>
+  <%= error_span(@player[:date_of_birth]) %>
+  <%= f.input :years_played %>
+  <%= error_span(@player[:years_played]) %>
+  <%= f.input :played_competitively %>
+  <%= error_span(@player[:played_competitively]) %>
+  <%= f.input :gender %>
+  <%= error_span(@player[:gender]) %>
+  <%= f.input :name_of_parent_guardian %>
+  <%= error_span(@player[:name_of_parent_guardian]) %>
+  <%= f.input :willing_to_coach %>
+  <%= error_span(@player[:willing_to_coach]) %>
+  <%= f.input :willing_to_assist_coach %>
+  <%= error_span(@player[:willing_to_assist_coach]) %>
+  <%= f.input :child_like_to_play_goalie %>
+  <%= error_span(@player[:child_like_to_play_goalie]) %>
+  <%= f.input :child_has_a_medical_condition %>
+  <%= error_span(@player[:child_has_a_medical_condition]) %>
+  <%= f.input :medical_condition %>
+  <%= error_span(@player[:medical_condition]) %>
+  <%= f.input :appectance_of_terms %>
+  <%= error_span(@player[:appectance_of_terms]) %>
+  <%= f.input :league_id %>
+  <%= error_span(@player[:league_id]) %>
+  <%= f.input :transaction_id %>
+  <%= error_span(@player[:transaction_id]) %>
 
-  <div class="form-inputs">
-    <%= f.input :last_name %>
-    <%= f.input :first_name %>
-    <%= f.input :middle_initial %>
-    <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :postal_code %>
-    <%= f.input :phone_number %>
-    <%= f.input :email_address %>
-    <%= f.input :date_of_birth %>
-    <%= f.input :years_played %>
-    <%= f.input :played_competitively %>
-    <%= f.input :gender %>
-    <%= f.input :name_of_parent_guardian %>
-    <%= f.input :willing_to_coach %>
-    <%= f.input :willing_to_assist_coach %>
-    <%= f.input :child_like_to_play_goalie %>
-    <%= f.input :child_has_a_medical_condition %>
-    <%= f.input :medical_condition %>
-    <%= f.input :appectance_of_terms %>
-    <%= f.input :league_id %>
-    <%= f.input :email_address %>
-    <%= f.input :transaction_id %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                players_path, :class => 'btn btn-default' %>
 <% end %>
