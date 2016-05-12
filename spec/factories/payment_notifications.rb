@@ -1,0 +1,57 @@
+FactoryGirl.define do
+  factory :payment_notification do
+    player_id 1
+    params "MyText"
+    status "MyString"
+    transaction_id "MyString"
+    league_id 1
+    token_id "MyString"
+    mc_gross 1.5
+    invoice "MyString"
+    protection_eligibility "MyString"
+    address_status "MyString"
+    item_number1 1
+    payer_id "MyString"
+    tax "MyString"
+    address_street "MyString"
+    payment_date "2016-05-12 19:05:15"
+    payment_status "MyString"
+    charset "MyString"
+    address_zip "MyString"
+    first_name "MyString"
+    mc_fee 1.5
+    address_country_code "MyString"
+    address_name "MyString"
+    notify_version "MyString"
+    custom "MyString"
+    payer_status "MyString"
+    business "MyString"
+    address_country "MyString"
+    num_cart_items "MyString"
+    mc_handling1 "MyString"
+    address_city "MyString"
+    verify_sign "MyString"
+    payer_email "MyString"
+    mc_shipping1 "MyString"
+    txn_id "MyString"
+    payment_type "MyString"
+    last_name "MyString"
+    address_state "MyString"
+    item_name1 "MyString"
+    receiver_email "MyString"
+    payment_fee 1.5
+    quantity1 1
+    receiver_id "MyString"
+    txn_type "MyString"
+    mc_gross_1 1.5
+    mc_currency "MyString"
+    residence_country "MyString"
+    transaction_subject "MyString"
+    payment_gross 1.5
+    ipn_track_id "MyString"
+    mc_shipping "MyString"
+    mc_handling "MyString"
+    tax1 "MyString"
+    pending_reason "MyString"
+  end
+end

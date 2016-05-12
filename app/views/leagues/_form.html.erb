@@ -1,0 +1,31 @@
+<%= simple_form_for(@league) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :season %>
+    <%= f.input :year %>
+    <%= f.input :final_name %>
+    <%= f.input :league_type_dropdown %>
+    <%= f.input :league_type %>
+    <%= f.input :description %>
+    <%= f.input :limit %>
+    <%= f.input :price %>
+    <%= f.input :start_players_birthday %>
+    <%= f.input :last_players_birthday %>
+    <%= f.input :show_on_main_page %>
+    <%= f.input :open_registration %>
+    <%= f.input :close_registration %>
+    <%= f.input :hide_on_main_page %>
+    <%= f.input :receive_emails %>
+    <%= f.input :email %>
+    <%= f.input :competitive %>
+    <%= f.input :disabled %>
+    <%= f.input :slug %>
+    <%= f.input :notes %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

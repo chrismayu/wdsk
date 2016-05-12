@@ -1,0 +1,32 @@
+<%= simple_form_for(@player) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :last_name %>
+    <%= f.input :first_name %>
+    <%= f.input :middle_initial %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :postal_code %>
+    <%= f.input :phone_number %>
+    <%= f.input :email_address %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :years_played %>
+    <%= f.input :played_competitively %>
+    <%= f.input :gender %>
+    <%= f.input :name_of_parent_guardian %>
+    <%= f.input :willing_to_coach %>
+    <%= f.input :willing_to_assist_coach %>
+    <%= f.input :child_like_to_play_goalie %>
+    <%= f.input :child_has_a_medical_condition %>
+    <%= f.input :medical_condition %>
+    <%= f.input :appectance_of_terms %>
+    <%= f.input :league_id %>
+    <%= f.input :email_address %>
+    <%= f.input :transaction_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
