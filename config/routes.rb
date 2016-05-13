@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :players
-  resources :leagues
-  root to: 'visitors#index'
-  devise_for :users
-  resources :users
+
+ devise_for :users
+ 
+ resources :leagues do
+ resources :players
+ end
+ root to: 'visitors#index'
+
+ resources :users
+  
 end

@@ -4,7 +4,9 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    @league = League.friendly.find(params[:league_id])
+    @players = @league.players.all
+   # authorize @players
   end
 
   # GET /players/1
@@ -14,7 +16,9 @@ class PlayersController < ApplicationController
 
   # GET /players/new
   def new
-    @player = Player.new
+    @league = League.find(params[:league_id]) 
+    @player = @league.players.new
+   # authorize @player
   end
 
   # GET /players/1/edit
