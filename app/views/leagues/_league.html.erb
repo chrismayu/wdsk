@@ -1,0 +1,38 @@
+       TOPP
+	   
+	    <td><%= link_to league.id, league_path(league) %></td>
+        <td><%= league.name %></td>
+        <td><%= league.season %></td>
+        <td><%= league.year %></td>
+        <td><%= league.final_name %></td>
+        <td><%= league.league_type_dropdown %></td>
+        <td><%= league.league_type %></td>
+        <td><%= league.description %></td>
+        <td><%= league.limit %></td>
+        <td><%= league.price %></td>
+        <td><%= league.start_players_birthday %></td>
+        <td><%= league.last_players_birthday %></td>
+        <td><%= league.show_on_main_page %></td>
+        <td><%= league.open_registration %></td>
+        <td><%= league.close_registration %></td>
+        <td><%= league.hide_on_main_page %></td>
+        <td><%= league.receive_emails %></td>
+        <td><%= league.email %></td>
+        <td><%= league.competitive %></td>
+        <td><%= league.disabled %></td>
+        <td><%= league.slug %></td>
+        <td><%= league.notes %></td>
+        <td><%=l league.created_at %></td>
+		<br>
+		
+		END    
+	  <%= link_to "#{league.name}",
+	              league_players_path(league) ,
+	              :class => 'btn btn-primary' %>
+		 <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_league_path(league), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      league_path(league),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
