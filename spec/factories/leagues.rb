@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :league do
-    name "MyString"
+    name {Faker::Team.name}
     season "MyString"
     year 1
     final_name "MyString"
@@ -15,11 +15,10 @@ FactoryGirl.define do
     open_registration "2016-05-12"
     close_registration "2016-05-12"
     hide_on_main_page "2016-05-12"
-    receive_emails false
-    email "MyString"
-    competitive false
+    receive_emails {Faker::Boolean.boolean}
+    email { Faker::Internet.email }
+    competitive {Faker::Boolean.boolean}
     disabled false
-    slug "MyString"
-    notes "MyText"
+    notes {Faker::Lorem.sentence(3)}
   end
 end

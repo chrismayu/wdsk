@@ -34,7 +34,7 @@
   <tbody>
     <% @players.each do |player| %>
       <tr>
-        <td><%= link_to player.id, player_path(player) %></td>
+        <td><%= link_to player.id, league_player_path(player.league_id, player.id) %></td>
         <td><%= player.last_name %></td>
         <td><%= player.first_name %></td>
         <td><%= player.middle_initial %></td>

@@ -47,7 +47,9 @@
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @league.notes %></dd>
 </dl>
-
+			  <%= link_to "#{@league.name}",
+			              league_players_path(@league) ,
+			              :class => 'btn btn-primary' %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               leagues_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
